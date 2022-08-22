@@ -4,4 +4,4 @@ this is a bloging web application Build in python Django framework currently in 
 
 PREREQUISITES
 
-pip install -r requirements.txt
+pip3 install -r requirements.txt

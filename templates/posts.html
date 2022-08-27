@@ -1,21 +1,22 @@
 {%extends 'base.html' %}
 
-{%block title%} {% for title in post %} {{title.cat.title}} {% endfor %} {%endblock%}
+{%block title%} {% for title in post %} {{title.title}} {% endfor %} {%endblock%}
 
 {%block content%}
 
 <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
+    <div class="container px-5 py-24 mx-auto ">
       <div class="flex flex-col text-center w-full mb-20">
         <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"> {% for catagory in post %}  {{catagory.cat.title}}  {% endfor %} </h2>
         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"> {% for title in post %} {{title.title}} {% endfor %}</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base"> {% for p in post %}
+        <p class="lg:w-2/3 mx-auto dark:text-white-800 leading-relaxed text-base"> {% for p in post %}
           <img src="/media/{{p.image}}" width="860px" height="180px" class="responsive-img">
           <br><br>
-          {{p.content | safe}}
 
-          {% endfor %}
+            {{p.content | safe}}
 
+            {% endfor %}
+          
         </p>
       </div>
     </div>

@@ -17,3 +17,6 @@ def post(request , url):
     post = Post.objects.filter(url=url)
     #print(post)
     return render(request, 'posts.html' , {'post': post})
+
+def about(request):
+    return render(request , 'about.html' , {})

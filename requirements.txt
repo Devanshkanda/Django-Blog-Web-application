@@ -1,4 +1,4 @@
 django-material-admin
 django-tinymce
-tkinter
+pillow
 python-decouple

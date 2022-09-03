@@ -19,12 +19,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import home,post,about
+from .views import home,post,contact
 
 urlpatterns = [
     # if after blog url is type if there is a blank space then this home func will get invoked
     path('' , home),
     path('home/' , home),
     path('blog/<slug:url>',post),
-    path('company/contact' ,about)
+    path('contact/' ,contact)
 ]

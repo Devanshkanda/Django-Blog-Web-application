@@ -34,3 +34,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+#contact modals
+
+class Contact(models.Model):
+    name=models.CharField(max_length=111)
+    email=models.EmailField(max_length=125)
+    message=models.CharField(max_length=200)
+    date=models.DateField()
+    def __str__(self):
+        return self.name

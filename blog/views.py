@@ -1,7 +1,8 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from blog.models import Post
+from blog.models import Post,Contact
+from datetime import datetime
 
 # Create your views here.
 def home(request):
@@ -18,5 +19,12 @@ def post(request , url):
     #print(post)
     return render(request, 'posts.html' , {'post': post})
 
-def about(request):
-    return render(request , 'about.html' , {})
+def contact(request):
+     if request.method =="POST":
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        message=request.POST.get('message')
+        contact=Contact(name=name, email=email,message=message,date=datetime.today())
+        contact.save()
+
+     return render(request , 'contact.html')

@@ -14,6 +14,9 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('cat',)
     list_per_page: 50
 
+    class Media:
+        js = ('https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js', 'JS/script.js',)
+
 admin.site.register(Catagory , CatagoryAdmin)
 admin.site.register(Post , PostAdmin)
 admin.site.register(Contact)
